@@ -143,4 +143,14 @@ img.profile-pic {
 }
 .movie{
     display: flex;
+    
+}
+@media screen and (max-width: 420px) {
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-container{
+        width: 100%;
+    }
 }

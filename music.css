@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,12 +30,12 @@ body {
     height: 200px;
     border-radius: 50%;
 }
-.img-content{
+.img-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.profile-info{
+.profile-info {
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -43,26 +43,27 @@ body {
     margin: 0;
     font-size: 36px;
     font-weight: bold;
-    color: #1ed760; 
+    color: #1ed760;
     text-align: center;
 }
 .listeners {
     color: #888888;
-    margin: 5px 0;text-align: center;
+    margin: 5px 0;
+    text-align: center;
 }
-.about{
+.about {
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     margin-left: 30px;
     padding: 0px 40px;
 }
-.about h1{
+.about h1 {
     font-size: 36px;
     margin: 5px 0px;
-    color: #1ed760; 
+    color: #1ed760;
 }
-.about p{
+.about p {
     font-size: 24px;
     margin: 5px 10px;
     line-height: 25px;
@@ -73,7 +74,7 @@ body {
 .song-list h2 {
     font-size: 24px;
     margin: 10px 0px;
-    color: #1ed760; 
+    color: #1ed760;
 }
 .song-list .music {
     display: flex;
@@ -88,7 +89,7 @@ body {
     margin-right: 10px;
     border-radius: 5px;
 }
-.music-name{
+.music-name {
     margin-left: 10px;
     width: 300px;
 }
@@ -100,10 +101,10 @@ body {
 }
 audio {
     width: 300px;
-    height: 40px; 
+    height: 40px;
     margin-top: 5px;
 }
-.music-name h4{
+.music-name h4 {
     width: 60px;
 }
 button {
@@ -116,12 +117,12 @@ button {
     font-size: 16px;
     margin-top: 20px;
 }
- button a {
-    color:black;
+button a {
+    color: black;
     font-weight: bold;
     text-decoration: none;
 }
-button i{
+button i {
     margin-right: 5px;
 }
 .content {
@@ -141,16 +142,66 @@ img.profile-pic {
     font-size: 18px;
     text-align: justify;
 }
-.movie{
+.movie {
     display: flex;
-    
 }
-@media screen and (max-width: 420px) {
+
+@media screen and (max-width: 768px) {
     .profile-header {
-        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-info {
+        margin-left: 0;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    .about h1 {
+        font-size: 28px;
+    }
+    .about p {
+        font-size: 18px;
+    }
+    .music-name h4 {
+        font-size: 16px;
+    }
+    audio {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-container {
+        width: 100%;
+        padding: 10px;
+    }
+    .profile-header {
         flex-direction: column;
     }
-    .profile-container{
-        width: 100%;
+    .profile-info h1 {
+        font-size: 24px;
+    }
+    .about h1 {
+        font-size: 24px;
+    }
+    .about p {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .music-name h4 {
+        font-size: 14px;
+    }
+    .movie {
+        flex-direction: column;
+    }
+    .about{
+        margin: 0px;
+        padding: 10px 15px;
     }
 }

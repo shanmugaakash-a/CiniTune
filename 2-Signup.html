@@ -6,97 +6,104 @@
     <title>Signup</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    background-color: #121212; /* Dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        body {
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+        }
 
-.signup-form-container {
-    background-color: #1c1c1c;
-    padding: 30px;
-    border-radius: 10px;
-    width: 350px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
+        .signup-form-container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
 
-.form-header h1 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
+        .form-header h1 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-.form-header h2 {
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 30px;
-}
+        .form-header h2 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
 
-.input-box {
-    margin-bottom: 20px;
-    position: relative;
-}
+        .input-box {
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-.input-box input {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    border: 1px solid #555;
-    border-radius: 5px;
-    color: #fff;
-    outline: none;
-}
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #fff;
+            outline: none;
+        }
 
-.input-box input::placeholder {
-    color: #999;
-}
+        .input-box input::placeholder {
+            color: #999;
+        }
 
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
 
-button {
-    width: 45%;
-    padding: 10px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    text-align: center;
-}
+        button {
+            width: 45%;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
 
-.cancel-btn {
-    background-color: #555;
-    color: #ffffff;
-}
+        .cancel-btn {
+            background-color: #555;
+            color: #ffffff;
+        }
 
-.next-btn {
-    background-color: #1ed760;
-    color: #000;
-}
+        .next-btn {
+            background-color: #1ed760;
+            color: #000;
+        }
 
-button a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
+        button a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
-button a:hover {
-    opacity: 0.8;
-}
+        button a:hover {
+            opacity: 0.8;
+        }
 
+        @media screen and (max-width: 480px) {
+            .signup-form-container {
+                width: 100%;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -105,7 +112,7 @@ button a:hover {
             <h1>CiniTune</h1>
             <h2>Signup to CiniTune</h2>
         </div>
-        <form action="Signup">
+        <form id="signupForm">
             <div class="input-box">
                 <input type="text" name="Firstname" placeholder="First Name" required><br><br>
             </div>
@@ -128,11 +135,28 @@ button a:hover {
                 <button type="button" class="cancel-btn">
                     <a href="./index.html">Cancel</a>
                 </button>
-                <button type="submit" class="next-btn">
-                    <a href="./3-Send-otp.html">Next</a>
-                </button>
+                <button type="submit" class="next-btn">Next</button>
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const formData = {
+                Firstname: document.querySelector('input[name="Firstname"]').value,
+                Lastname: document.querySelector('input[name="Lastname"]').value,
+                Mobilenumber: document.querySelector('input[name="Mobilenumber"]').value,
+                Email: document.querySelector('input[name="mailid"]').value,
+                Password: document.querySelector('input[name="password"]').value,
+                ConfirmPassword: document.querySelector('input[name="confirm-password"]').value
+            };
+
+            console.log(formData);
+
+           
+            window.location.href = './3-Send-otp.html';
+        });
+    </script>
 </body>
 </html>
